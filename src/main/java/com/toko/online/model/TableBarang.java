@@ -1,10 +1,12 @@
 package com.toko.online.model;
 
+import com.toko.online.auditing.Auditable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "barang")
-public class TableBarang {
+public class TableBarang extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -25,7 +27,7 @@ public class TableBarang {
     @Column(name = "description")
     private String description;
 
-    @Column(columnDefinition = "tinyint(1) default 1")
+    @Column(name = "publish")
     private boolean publish = true;
 
     public Integer getId() {

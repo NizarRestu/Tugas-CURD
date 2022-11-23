@@ -21,7 +21,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public TableUser addUser(TableUser tableUser) {
-        try {
             String email = tableUser.getEmail();
             var validasi =  userRepository.findByEmail(email);
             if ( validasi.isPresent()) {
@@ -29,10 +28,6 @@ public class UserServiceImpl implements UserService {
             } else {
                 return userRepository.save(tableUser);
             }
-        } catch (Exception e){
-            throw new InternalErrorException("Data harus di isi semua");
-        }
-
     }
 
 

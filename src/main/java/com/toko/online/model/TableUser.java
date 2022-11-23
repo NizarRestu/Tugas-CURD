@@ -1,28 +1,32 @@
 package com.toko.online.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.toko.online.auditing.Auditable;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
-public class TableUser {
+public class TableUser extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "username",nullable = false)
+    @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(name = "email",nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "age",nullable = false)
+    @Column(name = "age", nullable = false)
     private Integer age;
 
     @Lob
     @Column(name = "address")
     private String address = "Alamat tidak diisi";
 
-    @Column(name = "phone_number",nullable = false)
+    @Column(name = "phone_number", nullable = false)
     private Integer phoneNumber;
 
     public TableUser() {
