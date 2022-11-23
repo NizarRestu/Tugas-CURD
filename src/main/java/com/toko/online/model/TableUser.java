@@ -9,21 +9,32 @@ public class TableUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "username")
+    @Column(name = "username",nullable = false)
     private String username;
 
-    @Column(name = "email")
+    @Column(name = "email",nullable = false)
     private String email;
 
-    @Column(name = "age")
+    @Column(name = "age",nullable = false)
     private Integer age;
 
     @Lob
     @Column(name = "address")
     private String address;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number",nullable = false)
     private Integer phoneNumber;
+
+    public TableUser() {
+    }
+
+    public TableUser(String username, String email, Integer age, String address, Integer phoneNumber) {
+        this.username = username;
+        this.email = email;
+        this.age = age;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
 
     public Integer getId() {
         return id;

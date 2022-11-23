@@ -17,8 +17,4 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> InternalError(InternalErrorException internalErrorException) {
         return ResponseHelper.error(internalErrorException.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
-    @ExceptionHandler(AlertException.class)
-    public ResponseEntity<?> Al(InternalErrorException internalErrorException) {
-        return ResponseHelper.error(internalErrorException.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
 }
