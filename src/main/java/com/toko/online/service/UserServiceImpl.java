@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public TableUser addUser(TableUser tableUser) {
             String email = tableUser.getEmail();
-            var validasi =  userRepository.findByEmail(email);
-            if ( validasi.isPresent()) {
+            var validasi1 =  userRepository.findByEmail(email);
+            if ( validasi1.isPresent()) {
                 throw new InternalErrorException("Email Already Axist");
             } else {
                 return userRepository.save(tableUser);
