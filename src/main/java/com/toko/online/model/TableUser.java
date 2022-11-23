@@ -20,7 +20,7 @@ public class TableUser {
 
     @Lob
     @Column(name = "address")
-    private String address;
+    private String address = "Alamat tidak diisi";
 
     @Column(name = "phone_number",nullable = false)
     private Integer phoneNumber;
