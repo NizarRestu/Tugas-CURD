@@ -41,9 +41,9 @@ public class Order  {
         return Id;
     }
 
-    public void setId(Integer id) {
-        Id = id;
-    }
+//    public void setId(Integer id) {
+//        Id = id;
+//    }
 
     public String getNamaBarang() {
         return namaBarang;
